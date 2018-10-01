@@ -1,0 +1,54 @@
+{% extends 'blog/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title%}My Blog{% endblock %}</title>
+    {% block headerfiles %}
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link rel="stylesheet" href="{%static 'css/animate.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/Darth-Vader.ico' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    {% endblock %}
+</head>
+<body>
+{% block navbar %}
+<div id="Heading">
+    <h1 class="animated fadeInUp">Abhay's Blog</h1>
+    <ul>
+        <li>
+            <i class="fa fa-github"></i>
+        </li>
+        <li>
+            <i class="fa fa-instagram"></i>
+        </li>
+        <li>
+            <i class="fa fa-facebook"></i>
+        </li>
+    </ul>
+</div>
+{% endblock %}
+{% block body %}
+<div id="container">
+    <div id="main-box">
+        {% for post in posts %}
+        <div class="in-box animated fadeInUp">
+            <a href="{% url 'post_details' pk=post.pk %}">
+            <img src="{{post.post_photo}}" class="article-img">
+            <h1>{{post.post_title}}</h1>
+                <h3>{{post.post_about}}</h3>
+                <h5  style="color: #181818; margin-bottom: 1%">{{ post.published_date }}</h5>
+                <br>
+            </a>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>

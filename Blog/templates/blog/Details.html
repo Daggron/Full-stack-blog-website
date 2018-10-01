@@ -1,0 +1,44 @@
+{% extends 'blog/base.html' %}
+<!DOCTYPE html>
+{% load  static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.post_title }}</title>
+    {% block headerfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static  'css/animate.css' %}">
+    {% endblock %}
+</head>
+<body>
+{%  block body %}
+<div id="Heading" class="animated fadeInDown">
+    <a href="{% url 'post' %}"><h1>Abhay Sharma's blog</h1></a>
+</div>
+<div id="details">
+<figure class="animated fadeInLeft">
+    <img src="{{ post.post_photo }}" alt="Color splash" title="Abhay Stark" align="center">
+    <figcaption>
+        <p>{{ post.post_description }}</p>
+    </figcaption>
+</figure>
+    <div id="details-box"  class="animated fadeInRight">
+
+    <h1>Title:{{ post.post_title }}</h1><br>
+       <h1>About:</h1>
+        <p id="post-details">{{ post.post_about }}</p>
+    </div>
+</div>
+<div id="main-content"  class="animated fadeInUp">
+    <h1>
+        Details:
+    </h1>
+    <p>
+      {{ post.post_body }}
+    </p>
+</div>
+{% endblock %}
+</body>
+
+</html>

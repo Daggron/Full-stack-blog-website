@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Page not found{% endblock %}</title>
+    {% block headerfiles %}
+    <link rel="stylesheet" href="{% static 'css/error.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/Darth-Vader.ico' %}">
+    {% endblock %}
+</head>
+<body>
+{% block body %}
+<div  id="error-body">
+<div  id="text-container">
+    <h1>Error<br>404</h1>
+</div>
+<div id="paragraph">
+    <p>The  Page  you Requested  for  not found<br>
+    Go to  the  homepage <a href="index.html">Home</a></p>
+</div>
+</div>
+{% endblock %}
+</body>
+</html>

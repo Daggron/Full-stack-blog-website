@@ -1,0 +1,48 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    background: #181818;
+}
+
+#text-container{
+    margin: 10% 0 0 0;
+    text-align: center;
+
+
+}
+#text-container  h1{
+    font-size: 150px;
+    color: rgba(255,255,255,0.1);
+    font-family: 'Montserrat',sans-serif;
+    background: url("../images/Optimized-404.png");
+    -webkit-background-clip: text;
+    animation: animate 7s  linear infinite;
+}
+@keyframes animate {
+    0%{
+        background-position: left 0 top 10px;
+    }
+    40%{
+        background-position: left 500px top  10px;
+    }
+    80%{
+        background-position: left -100px top 10px;
+    }
+    100%
+    {
+        background-position: left -500px  top 10px;
+    }
+
+}
+#paragraph p{
+    text-align: center;
+    color:white;
+    color-rendering: optimizeSpeed;
+}
+#paragraph p a{
+    color:  #ee8866;
+    text-decoration: none;
+}
+#post-details{
+    width: 40%;
+}

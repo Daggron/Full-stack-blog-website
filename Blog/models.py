@@ -8,7 +8,7 @@ class Post(models.Model):
     post_about = models.CharField(max_length=2000)
     post_description = models.CharField(max_length=1000)
     post_body = models.TextField()
-    post_photo = models.FileField(default=None)
+    post_photo = models.FileField(blank=True,null=True)
     published_date = models.DateTimeField(null=True , blank=True)
     created_date = models.DateTimeField(default=timezone.now)
 
